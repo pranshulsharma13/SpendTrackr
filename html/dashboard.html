@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Expense Tracker</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">💰 ExpenseTracker</div>
+      <nav>
+        <a href="dashboard.html" class="active">🏠 Dashboard</a>
+        <a href="#">📊 Reports</a>
+        <a href="#">⚙ Settings</a>
+        <a href="index.html">🚪 Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h2>Welcome, User 👋</h2>
+      </header>
+
+      <section class="dashboard">
+        <h2>My Expenses</h2>
+        <form class="expense-form">
+          <input type="text" placeholder="Expense Title" required>
+          <input type="number" placeholder="Amount" required>
+          <select>
+            <option>Food</option>
+            <option>Travel</option>
+            <option>Shopping</option>
+          </select>
+          <button class="btn primary">Add Expense</button>
+        </form>
+
+        <div class="expense-list">
+          <h3>Expense History</h3>
+          <ul>
+            <li>🍕 Food - $20</li>
+            <li>🚌 Travel - $50</li>
+            <li>🛍️ Shopping - $100</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
