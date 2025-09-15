@@ -6,6 +6,7 @@
   <title>Dashboard - Expense Tracker</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
+  
 </head>
 <body>
   <div class="dashboard-container">
@@ -14,7 +15,17 @@
       <div class="sidebar-logo">💰 ExpenseTracker</div>
       <nav>
         <a href="dashboard.html" class="active">🏠 Dashboard</a>
-        <a href="#">📊 Reports</a>
+        <a href="reports.html" class="active">📊 Reports</a>
+        
+        <a href="add-expense.html">Add Expense</a>
+        <a href="categories.html">Categories</a>
+        <a href="split-expenses.html">Split Expenses</a>
+        <a href="budget.html">Budget</a>
+        <a href="recurring.html">Recurring</a>
+        <a href="receipts.html">Receipts</a>
+        
+        
+        
         <a href="#">⚙ Settings</a>
         <a href="index.html">🚪 Logout</a>
       </nav>
@@ -50,5 +61,29 @@
       </section>
     </main>
   </div>
+  <script>
+  const API_URL = "http://localhost:5000/api/expenses";
+
+  async function loadExpenses() {
+    const response = await fetch(API_URL);
+    const expenses = await response.json();
+
+    const tableBody = document.querySelector("table tbody");
+    tableBody.innerHTML = "";
+    expenses.forEach(exp => {
+      tableBody.innerHTML += `
+        <tr>
+          <td>${exp.title}</td>
+          <td>${exp.category}</td>
+          <td>${exp.amount}</td>
+          <td>${exp.date}</td>
+        </tr>
+      `;
+    });
+  }
+
+  loadExpenses();
+</script>
+
 </body>
 </html>

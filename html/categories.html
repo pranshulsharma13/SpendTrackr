@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories - SpendTrackr</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Extra Styling for Categories Page */
+    .category-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .category-form {
+      background: linear-gradient(135deg, #8f94fb, #4e54c8);
+      padding: 2rem;
+      border-radius: 12px;
+      color: #fff;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .category-form h3 {
+      margin-bottom: 1rem;
+    }
+
+    .category-form input {
+      border: none;
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    .category-form button {
+      background: #ffce00;
+      color: #222;
+      font-weight: bold;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .category-form button:hover {
+      background: #ffdb4d;
+      transform: translateY(-2px);
+    }
+
+    .category-list {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .category-list h3 {
+      margin-bottom: 1rem;
+    }
+
+    .expense-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .expense-table th, .expense-table td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .expense-table th {
+      background: #f4f4f9;
+    }
+
+    .expense-table tr:hover {
+      background: #f9f9ff;
+    }
+
+    .btn.small {
+      padding: 0.4rem 0.8rem;
+      margin-right: 0.3rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s;
+    }
+
+    .btn.small:hover {
+      transform: scale(1.05);
+    }
+
+    .btn.edit {
+      background: #4e54c8;
+      color: #fff;
+    }
+
+    .btn.delete {
+      background: #ff4d4d;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">💸 SpendTrackr</div>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add-expense.html">Add Expense</a>
+        <a href="categories.html" class="active">Categories</a>
+        <a href="split-expenses.html">Split Expenses</a>
+        <a href="budget.html">Budget</a>
+        <a href="recurring.html">Recurring</a>
+        <a href="receipts.html">Receipts</a>
+        <a href="reports.html">Reports</a>
+        <a href="settings.html">Settings</a>
+        <a href="login.html">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="topbar">
+        <h2>Manage Categories</h2>
+      </div>
+
+      <div class="category-container">
+        <!-- Add Category Form -->
+        <div class="category-form">
+          <h3>Add New Category</h3>
+          <input type="text" id="categoryName" placeholder="Enter category name">
+          <button type="button">Add Category</button>
+        </div>
+
+        <!-- Categories List -->
+        <div class="category-list">
+          <h3>Your Categories</h3>
+          <table class="expense-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Food</td>
+                <td>Essential</td>
+                <td>
+                  <button class="btn small edit">Edit</button>
+                  <button class="btn small delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Travel</td>
+                <td>Leisure</td>
+                <td>
+                  <button class="btn small edit">Edit</button>
+                  <button class="btn small delete">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Shopping</td>
+                <td>Optional</td>
+                <td>
+                  <button class="btn small edit">Edit</button>
+                  <button class="btn small delete">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
